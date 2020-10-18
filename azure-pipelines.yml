@@ -12,8 +12,8 @@ pool:
 steps:
 - script: docker pull katalonstudio/katalon
   displayName: 'Pull katalon studio images'
-- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="8a09ccb8-c346-46fa-889c-33bf8b7dcd80"
-  displayName: 'Runnning Katalon TS_RegressionTest'
+- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/Regression" -apiKey="8a09ccb8-c346-46fa-889c-33bf8b7dcd80"
+  displayName: 'Runnning Katalon SampleRegressionTest'
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'JUnit Report' 
